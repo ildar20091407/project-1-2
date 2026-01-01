@@ -1,0 +1,116 @@
+/* --- Десктоп (от 1025px и выше) --- */
+@media (min-width: 1025px) {
+  .form {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+  }
+
+  .main_box {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+  }
+
+  .main_left-first-title {
+    font-size: 70px;
+  }
+
+  .section_location,
+  .section_two,
+  .section_three,
+  .main_box-right {
+    max-width: 850px;
+  }
+
+  .navbar__menu {
+    gap: 15px;
+  }
+}
+
+/* --- Планшеты (до 1024px) --- */
+@media (max-width: 1024px) {
+  .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .main_box {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .main_left-first-title {
+    font-size: 50px;
+  }
+
+  .section_location,
+  .section_two,
+  .section_three,
+  .main_box-right {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .navbar__menu {
+    gap: 10px;
+  }
+
+  .navbar__menu a {
+    font-size: 14px;
+  }
+}
+
+/* --- Мобильные (до 768px) --- */
+@media (max-width: 768px) {
+  .form {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .main_left-first-title {
+    font-size: 36px;
+    text-align: center;
+  }
+
+  .main_box {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .section_location,
+  .section_two,
+  .section_three,
+  .main_box-right {
+    padding: 15px;
+    margin: 10px 0;
+  }
+
+  .navbar__menu {
+    display: none; /* скрыто по умолчанию */
+    flex-direction: column;
+    background: var(--white);
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    padding: 15px;
+    border: 1px solid var(--grey);
+    border-radius: 10px;
+    max-width: 250px;
+  }
+
+  .navbar__menu.active {
+    display: flex;
+  }
+
+  .burger {
+    display: block;
+    font-size: 28px;
+    cursor: pointer;
+  }
+}
+
