@@ -16,20 +16,24 @@
     font-size: 70px;
   }
 
-  .section_location,
-  .section_two,
-  .section_three,
-  .main_box-right {
-    max-width: 850px;
-  }
-
   .navbar__menu {
     gap: 15px;
   }
 }
 
-/* --- Планшеты (до 1024px) --- */
-@media (max-width: 1024px) {
+/* --- Планшеты и экраны до 1000px --- */
+@media (max-width: 1000px) {
+  .table_info,
+  .table_box {
+    display: grid;
+    grid-template-columns: 1fr; /* одна колонка */
+    gap: 20px;
+  }
+
+  .table_info > * {
+    width: 100%; /* одинаковая ширина для всех элементов */
+  }
+
   .form {
     display: flex;
     flex-direction: column;
@@ -45,15 +49,34 @@
 
   .main_left-first-title {
     font-size: 50px;
+    text-align: center;
   }
 
-  .section_location,
-  .section_two,
-  .section_three,
-  .main_box-right {
-    max-width: 100%;
-    margin: 0 auto;
-  }
+
+.section_location,
+.section_two,
+.main_left-first,
+.section_three,
+.table {
+  font-weight: 600;
+  font-size: 30px;
+  max-width: 850px;   /* одинаковая максимальная ширина */
+  width: 100%;       /* растягиваются на всю доступную ширину */
+  margin: 20px auto; /* одинаковые внешние отступы, центрирование */
+  padding: 20px;     /* одинаковые внутренние отступы */
+  box-sizing: border-box; /* учитываем padding в ширине */
+}
+.main_box-right{
+  font-weight: 600;
+  font-size: 30px;
+  max-width: 850px;   /* одинаковая максимальная ширина */ 
+  margin: 20px auto; /* одинаковые внешние отступы, центрирование */
+  padding: 20px;     /* одинаковые внутренние отступы */
+  box-sizing: border-box; /* учитываем padding в ширине */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
   .navbar__menu {
     gap: 10px;
@@ -66,11 +89,6 @@
 
 /* --- Мобильные (до 768px) --- */
 @media (max-width: 768px) {
-  .form {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 10px;
-  }
 
   .main_left-first-title {
     font-size: 36px;
@@ -86,8 +104,7 @@
   .section_two,
   .section_three,
   .main_box-right {
-    padding: 15px;
-    margin: 10px 0;
+    margin: 20px 0;
   }
 
   .navbar__menu {
@@ -113,4 +130,60 @@
     cursor: pointer;
   }
 }
+/* Планшетная версия и небольшие ноутбуки */
+
+/* Мобильная версия (смартфоны) */
+@media (max-width: 480px) {
+
+    .main_box-right-title {
+        font-size: 22px;    /* Компактный заголовок */
+        text-align: center; /* Центрируем заголовок для красоты на мобилках */
+    }
+
+    .main_box-right-text, 
+    .main_box-right-cost {
+        text-align: center; /* Центрируем текст под заголовком */
+    }
+
+    /* Делаем все инпуты и кнопки на 100% ширины экрана */
+    .input, 
+    .right_footer-btn, 
+    .message,
+    .main_box-right-btn-1 {
+        max-width: 100%; 
+        width: 100%;
+        box-sizing: border-box; /* Чтобы padding не раздувал ширину */
+    }
+
+    /* Адаптация выбора пола */
+    .your_gender {
+        flex-direction: column; /* Ставим "Ваш пол" и кнопки друг под другом */
+        height: auto;           /* Убираем фиксированную высоту */
+        align-items: center;
+        gap: 10px;
+        max-width: 410px; 
+        width: 100%;             /* Расстояние между текстом и кнопками */
+        margin-bottom: 15px;
+    }
+
+    .your_gender-text {
+        width: 100%;
+        text-align: center;
+    }
+
+    .your_gender-form-box {
+        max-width: 100%; /* Растягиваем выбор пола на всю ширину */
+    }
+
+    /* Согласие: делаем текст чуть крупнее для читаемости на экране телефона */
+    .agreement-text {
+        font-size: 11px;
+    }
+    
+    .custom-checkbox {
+        width: 25px; /* Уменьшаем огромный чекбокс (был 40px) */
+        flex-shrink: 0;
+    }
+}
+
 
